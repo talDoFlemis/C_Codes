@@ -3,7 +3,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "buffer_handler.h"
 
 typedef struct{
     char* buffer;
@@ -35,6 +34,10 @@ int read_input(InputBuffer* input_buffer){
 void close_input_buffer(InputBuffer* input_buffer){
     free(input_buffer->buffer);
     free(input_buffer);
+}
+
+void print_prompt(void){
+    printf("db > ");
 }
 
 int main (int argc, char* argv[]){
